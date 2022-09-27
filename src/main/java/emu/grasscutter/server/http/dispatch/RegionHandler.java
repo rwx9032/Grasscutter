@@ -5,6 +5,7 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerRunMode;
 import emu.grasscutter.net.proto.QueryCurrRegionHttpRspOuterClass.QueryCurrRegionHttpRsp;
 import emu.grasscutter.net.proto.RegionInfoOuterClass.RegionInfo;
+import emu.grasscutter.net.proto.ResVersionConfigOuterClass.ResVersionConfig;
 import emu.grasscutter.net.proto.RegionSimpleInfoOuterClass.RegionSimpleInfo;
 import emu.grasscutter.server.event.dispatch.QueryAllRegionsEvent;
 import emu.grasscutter.server.event.dispatch.QueryCurrentRegionEvent;
@@ -74,11 +75,38 @@ public final class RegionHandler implements Router {
                     .build();
             usedNames.add(region.Name); servers.add(identifier);
 
+			//var Base64ResVersionConfigMd5 = "e1wicmVtb3RlTmFtZVwiOiBcInJlc192ZXJzaW9uc19leHRlcm5hbFwiLCBcIm1kNVwiOiBcImQ0YzdjZWY2ZGVkNDA1NmUxZjY5MWVkMWM4YzYwMDBhXCIsIFwiZmlsZVNpemVcIjogMzI2MDU2fVxyXG57XCJyZW1vdGVOYW1lXCI6IFwicmVzX3ZlcnNpb25zX21lZGl1bVwiLCBcIm1kNVwiOiBcIjA4YWIyOWE0NzlhOTM4MjQyMDU3NDg3MmYzZjUwYzk0XCIsIFwiZmlsZVNpemVcIjogOTczNDV9XHJcbntcInJlbW90ZU5hbWVcIjogXCJyZXNfdmVyc2lvbnNfc3RyZWFtaW5nXCIsIFwibWQ1XCI6IFwiYjIyMTVlYTRkNzBiODJjMGI4NWM1MzVkMzczMmRiOGVcIiwgXCJmaWxlU2l6ZVwiOiAyOTM2MH1cclxue1wicmVtb3RlTmFtZVwiOiBcInJlbGVhc2VfcmVzX3ZlcnNpb25zX2V4dGVybmFsXCIsIFwibWQ1XCI6IFwiODgzYzg2ZGYyN2FiMTAwZDA0YzFmMDhkNzc5NDAxYTJcIiwgXCJmaWxlU2l6ZVwiOiAzMjYwNTZ9XHJcbntcInJlbW90ZU5hbWVcIjogXCJyZWxlYXNlX3Jlc192ZXJzaW9uc19tZWRpdW1cIiwgXCJtZDVcIjogXCI0ZjczMDAxZTQzZDE4NTEwZWVlYzNmZTUyZjhkMDA4OFwiLCBcImZpbGVTaXplXCI6IDk3MzQ1fVxyXG57XCJyZW1vdGVOYW1lXCI6IFwicmVsZWFzZV9yZXNfdmVyc2lvbnNfc3RyZWFtaW5nXCIsIFwibWQ1XCI6IFwiY2IwMDRkZjY4NTkzYjFkODVmMzZjN2UxMzAzOGVmNTJcIiwgXCJmaWxlU2l6ZVwiOiAyOTM2MH1cclxue1wicmVtb3RlTmFtZVwiOiBcImJhc2VfcmV2aXNpb25cIiwgXCJtZDVcIjogXCIzN2NkNmY3OGJmMmJkMTllODY4YTdhZGNiOTY0ZjZlZlwiLCBcImZpbGVTaXplXCI6IDE4fQ==";
+            //var ResVersionConfigMd5 = "";
+            var ResVersionConfigMd5 = "{\"remoteName\": \"res_versions_external\", \"md5\": \"d4c7cef6ded4056e1f691ed1c8c6000a\", \"fileSize\": 326056}\r\n{\"remoteName\": \"res_versions_medium\", \"md5\": \"08ab29a479a9382420574872f3f50c94\", \"fileSize\": 97345}\r\n{\"remoteName\": \"res_versions_streaming\", \"md5\": \"b2215ea4d70b82c0b85c535d3732db8e\", \"fileSize\": 29360}\r\n{\"remoteName\": \"release_res_versions_external\", \"md5\": \"883c86df27ab100d04c1f08d779401a2\", \"fileSize\": 326056}\r\n{\"remoteName\": \"release_res_versions_medium\", \"md5\": \"4f73001e43d18510eeec3fe52f8d0088\", \"fileSize\": 97345}\r\n{\"remoteName\": \"release_res_versions_streaming\", \"md5\": \"cb004df68593b1d85f36c7e13038ef52\", \"fileSize\": 29360}\r\n{\"remoteName\": \"base_revision\", \"md5\": \"37cd6f78bf2bd19e868a7adcb964f6ef\", \"fileSize\": 18}";
+            //String ResVersionConfigMd5 = Base64.getEncoder().withoutPadding().encodeToString(Base64ResVersionConfigMd5.getBytes());
+
+            // Create a ResVersionConfig object.
+            var resVersionConfig = ResVersionConfig.newBuilder()
+                    .setVersion(10283122)
+                    .setMd5(ResVersionConfigMd5)
+                    .setVersionSuffix("ec58ff372e")
+                    .setBranch("3.0_live")
+                    .setReleaseTotalSize("0")
+                    .build();
+
+            // aBuilder.getB1Builder().setB("convenint_set")
             // Create a region info object.
             var regionInfo = RegionInfo.newBuilder()
-                    .setGateserverIp(region.Ip).setGateserverPort(region.Port)
+                    .setGateserverIp(region.Ip).setGateserverPort(region.Port).setAreaType("CN")
                     .setSecretKey(ByteString.copyFrom(Crypto.DISPATCH_SEED))
+                    .setClientDataVersion(10316937)
+                    .setClientSilenceDataVersion(10446836)
+                    .setClientVersionSuffix("4fcac11e23")
+                    .setClientSilenceVersionSuffix("320895326e")
+                    .setClientDataMd5("{\"remoteName\": \"data_versions\", \"md5\": \"a6c06d1ce216776cac26797cf60c8133\", \"fileSize\": 4414}")
+                    .setClientSilenceDataMd5("{\"remoteName\": \"data_versions\", \"md5\": \"10c4b8f1188a624c5d44eddbb2ce8479\", \"fileSize\": 513}")
+                    .setResourceUrlBak("3.0_live")
+                    .setResourceUrl("https://autopatchcn.yuanshen.com/client_game_res/3.0_live")
+                    .setDataUrl("https://autopatchcn.yuanshen.com/client_design_data/3.0_live")
+                    .setResVersionConfig(resVersionConfig)
                     .build();
+            //output region info
+            Grasscutter.getLogger().info("Region info: " + regionInfo.toString());
             // Create an updated region query.
             var updatedQuery = QueryCurrRegionHttpRsp.newBuilder().setRegionInfo(regionInfo).build();
             regions.put(region.Name, new RegionData(updatedQuery, Utils.base64Encode(updatedQuery.toByteString().toByteArray())));
