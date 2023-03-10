@@ -138,36 +138,53 @@ public final class RegionHandler implements Router {
     private static void queryRegionList(Context ctx) {
         // Get logger and query parameters.
         Logger logger = Grasscutter.getLogger();
-        String versionName = ctx.queryParam("version");
-        String versionCode = versionName.replaceAll("[/.0-9]*", "");
-        String platformName = ctx.queryParam("platform");
+        if (ctx.queryParamMap().containsKey("version") && ctx.queryParamMap().containsKey("platform")) {
+            String versionName = ctx.queryParam("version");
+            String versionCode = versionName.replaceAll("[/.0-9]*", "");
+            String platformName = ctx.queryParam("platform");
 
-        // Determine the region list to use based on the version and platform.
-        if (("GCPS3.5.0".equals(versionName) && "1".equals(platformName)) || "CNRELiOS".equals(versionCode) || "CNRELWin".equals(versionCode) || "CNRELAndroid".equals(versionCode)) {
-            // Use the CN region list.
-            QueryAllRegionsEvent event = new QueryAllRegionsEvent(regionListResponsecn);
-            event.call();
-            logger.info(translate("messages.status.versioncn"));
+            // Determine the region list to use based on the version and platform.
+            if (("GCPS3.5.0".equals(versionName) && "1".equals(platformName)) || "CNRELiOS".equals(versionCode) || "CNRELWin".equals(versionCode) || "CNRELAndroid".equals(versionCode)) {
+                // Use the CN region list.
+                QueryAllRegionsEvent event = new QueryAllRegionsEvent(regionListResponsecn);
+                event.call();
+                logger.info(translate("messages.status.versioncn"));
 
-            // Respond with the event result.
-            ctx.result(event.getRegionList());
-        } else if (("GCPS3.5.0".equals(versionName) && "2".equals(platformName)) || "OSRELiOS".equals(versionCode) || "OSRELWin".equals(versionCode) || "OSRELAndroid".equals(versionCode)) {
-            // Use the OS region list.
+                // Respond with the event result.
+                ctx.result(event.getRegionList());
+            } else if (("GCPS3.5.0".equals(versionName) && "2".equals(platformName)) || "OSRELiOS".equals(versionCode) || "OSRELWin".equals(versionCode) || "OSRELAndroid".equals(versionCode)) {
+                // Use the OS region list.
+                QueryAllRegionsEvent event = new QueryAllRegionsEvent(regionListResponse);
+                event.call();
+                logger.info(translate("messages.status.versionos"));
+
+                // Respond with the event result.
+                ctx.result(event.getRegionList());
+            } else {
+                /*
+                String regionListResponse = "CP///////////wE=";
+                QueryAllRegionsEvent event = new QueryAllRegionsEvent(regionListResponse);
+                event.call();
+                ctx.result(event.getRegionList());
+                return;
+                 */
+                // Use the default region list.
+                QueryAllRegionsEvent event = new QueryAllRegionsEvent(regionListResponse);
+                event.call();
+                logger.info(translate("messages.status.versionos"));
+
+                // Respond with the event result.
+                ctx.result(event.getRegionList());
+            }
+        } else {
+            // Use the default region list.
             QueryAllRegionsEvent event = new QueryAllRegionsEvent(regionListResponse);
             event.call();
             logger.info(translate("messages.status.versionos"));
 
             // Respond with the event result.
             ctx.result(event.getRegionList());
-        } else {
-            // Use the default region list.
-            String regionListResponse = "CP///////////wE=";
-            QueryAllRegionsEvent event = new QueryAllRegionsEvent(regionListResponse);
-            event.call();
-            ctx.result(event.getRegionList());
-            return;
         }
-
         // Log the request to the console.
         Grasscutter.getLogger().info(String.format("[Dispatch] Client %s request: query_region_list", ctx.ip()));
     }
