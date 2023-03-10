@@ -19,36 +19,41 @@ public final class FireworksLaunchDataNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 lastUseSchemeId = 6;</code>
+     * <code>uint32 last_use_scheme_id = 1;</code>
      * @return The lastUseSchemeId.
      */
     int getLastUseSchemeId();
 
     /**
-     * <code>repeated .FireworksLaunchSchemeData schemeDataList = 2;</code>
+     * <code>repeated .FireworksLaunchSchemeData scheme_data_list = 10;</code>
      */
     java.util.List<emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData> 
         getSchemeDataListList();
     /**
-     * <code>repeated .FireworksLaunchSchemeData schemeDataList = 2;</code>
+     * <code>repeated .FireworksLaunchSchemeData scheme_data_list = 10;</code>
      */
     emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData getSchemeDataList(int index);
     /**
-     * <code>repeated .FireworksLaunchSchemeData schemeDataList = 2;</code>
+     * <code>repeated .FireworksLaunchSchemeData scheme_data_list = 10;</code>
      */
     int getSchemeDataListCount();
     /**
-     * <code>repeated .FireworksLaunchSchemeData schemeDataList = 2;</code>
+     * <code>repeated .FireworksLaunchSchemeData scheme_data_list = 10;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeDataOrBuilder> 
         getSchemeDataListOrBuilderList();
     /**
-     * <code>repeated .FireworksLaunchSchemeData schemeDataList = 2;</code>
+     * <code>repeated .FireworksLaunchSchemeData scheme_data_list = 10;</code>
      */
     emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeDataOrBuilder getSchemeDataListOrBuilder(
         int index);
   }
   /**
+   * <pre>
+   * Name: NLCCANLMPOI
+   * CmdId: 6038
+   * </pre>
+   *
    * Protobuf type {@code FireworksLaunchDataNotify}
    */
   public static final class FireworksLaunchDataNotify extends
@@ -95,18 +100,18 @@ public final class FireworksLaunchDataNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 18: {
+            case 8: {
+
+              lastUseSchemeId_ = input.readUInt32();
+              break;
+            }
+            case 82: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 schemeDataList_ = new java.util.ArrayList<emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData>();
                 mutable_bitField0_ |= 0x00000001;
               }
               schemeDataList_.add(
                   input.readMessage(emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData.parser(), extensionRegistry));
-              break;
-            }
-            case 48: {
-
-              lastUseSchemeId_ = input.readUInt32();
               break;
             }
             default: {
@@ -144,141 +149,10 @@ public final class FireworksLaunchDataNotifyOuterClass {
               emu.grasscutter.net.proto.FireworksLaunchDataNotifyOuterClass.FireworksLaunchDataNotify.class, emu.grasscutter.net.proto.FireworksLaunchDataNotifyOuterClass.FireworksLaunchDataNotify.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code FireworksLaunchDataNotify.LBBDGOELNDE}
-     */
-    public enum LBBDGOELNDE
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NONE = 0;</code>
-       */
-      NONE(0, 0),
-      /**
-       * <code>PEPPOHPHJOJ = 5979;</code>
-       */
-      PEPPOHPHJOJ(1, 5979),
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      NNBKOLMPOEA(3, 1),
-      UNRECOGNIZED(-1, -1),
-      ;
-
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final LBBDGOELNDE DCDNILFDFLB = NONE;
-      /**
-       * <code>NONE = 0;</code>
-       */
-      public static final int NONE_VALUE = 0;
-      /**
-       * <code>PEPPOHPHJOJ = 5979;</code>
-       */
-      public static final int PEPPOHPHJOJ_VALUE = 5979;
-      /**
-       * <code>DCDNILFDFLB = 0;</code>
-       */
-      public static final int DCDNILFDFLB_VALUE = 0;
-      /**
-       * <code>NNBKOLMPOEA = 1;</code>
-       */
-      public static final int NNBKOLMPOEA_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (index == -1) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static LBBDGOELNDE valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static LBBDGOELNDE forNumber(int value) {
-        switch (value) {
-          case 0: return NONE;
-          case 5979: return PEPPOHPHJOJ;
-          case 1: return NNBKOLMPOEA;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<LBBDGOELNDE>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          LBBDGOELNDE> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<LBBDGOELNDE>() {
-              public LBBDGOELNDE findValueByNumber(int number) {
-                return LBBDGOELNDE.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (index == -1) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.FireworksLaunchDataNotifyOuterClass.FireworksLaunchDataNotify.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final LBBDGOELNDE[] VALUES = getStaticValuesArray();
-      private static LBBDGOELNDE[] getStaticValuesArray() {
-        return new LBBDGOELNDE[] {
-          NONE, PEPPOHPHJOJ, DCDNILFDFLB, NNBKOLMPOEA, 
-        };
-      }
-      public static LBBDGOELNDE valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private LBBDGOELNDE(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:FireworksLaunchDataNotify.LBBDGOELNDE)
-    }
-
-    public static final int LASTUSESCHEMEID_FIELD_NUMBER = 6;
+    public static final int LAST_USE_SCHEME_ID_FIELD_NUMBER = 1;
     private int lastUseSchemeId_;
     /**
-     * <code>uint32 lastUseSchemeId = 6;</code>
+     * <code>uint32 last_use_scheme_id = 1;</code>
      * @return The lastUseSchemeId.
      */
     @java.lang.Override
@@ -286,17 +160,17 @@ public final class FireworksLaunchDataNotifyOuterClass {
       return lastUseSchemeId_;
     }
 
-    public static final int SCHEMEDATALIST_FIELD_NUMBER = 2;
+    public static final int SCHEME_DATA_LIST_FIELD_NUMBER = 10;
     private java.util.List<emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData> schemeDataList_;
     /**
-     * <code>repeated .FireworksLaunchSchemeData schemeDataList = 2;</code>
+     * <code>repeated .FireworksLaunchSchemeData scheme_data_list = 10;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData> getSchemeDataListList() {
       return schemeDataList_;
     }
     /**
-     * <code>repeated .FireworksLaunchSchemeData schemeDataList = 2;</code>
+     * <code>repeated .FireworksLaunchSchemeData scheme_data_list = 10;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeDataOrBuilder> 
@@ -304,21 +178,21 @@ public final class FireworksLaunchDataNotifyOuterClass {
       return schemeDataList_;
     }
     /**
-     * <code>repeated .FireworksLaunchSchemeData schemeDataList = 2;</code>
+     * <code>repeated .FireworksLaunchSchemeData scheme_data_list = 10;</code>
      */
     @java.lang.Override
     public int getSchemeDataListCount() {
       return schemeDataList_.size();
     }
     /**
-     * <code>repeated .FireworksLaunchSchemeData schemeDataList = 2;</code>
+     * <code>repeated .FireworksLaunchSchemeData scheme_data_list = 10;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData getSchemeDataList(int index) {
       return schemeDataList_.get(index);
     }
     /**
-     * <code>repeated .FireworksLaunchSchemeData schemeDataList = 2;</code>
+     * <code>repeated .FireworksLaunchSchemeData scheme_data_list = 10;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeDataOrBuilder getSchemeDataListOrBuilder(
@@ -340,11 +214,11 @@ public final class FireworksLaunchDataNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < schemeDataList_.size(); i++) {
-        output.writeMessage(2, schemeDataList_.get(i));
-      }
       if (lastUseSchemeId_ != 0) {
-        output.writeUInt32(6, lastUseSchemeId_);
+        output.writeUInt32(1, lastUseSchemeId_);
+      }
+      for (int i = 0; i < schemeDataList_.size(); i++) {
+        output.writeMessage(10, schemeDataList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -355,13 +229,13 @@ public final class FireworksLaunchDataNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < schemeDataList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, schemeDataList_.get(i));
-      }
       if (lastUseSchemeId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, lastUseSchemeId_);
+          .computeUInt32Size(1, lastUseSchemeId_);
+      }
+      for (int i = 0; i < schemeDataList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(10, schemeDataList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -393,10 +267,10 @@ public final class FireworksLaunchDataNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + LASTUSESCHEMEID_FIELD_NUMBER;
+      hash = (37 * hash) + LAST_USE_SCHEME_ID_FIELD_NUMBER;
       hash = (53 * hash) + getLastUseSchemeId();
       if (getSchemeDataListCount() > 0) {
-        hash = (37 * hash) + SCHEMEDATALIST_FIELD_NUMBER;
+        hash = (37 * hash) + SCHEME_DATA_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getSchemeDataListList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -495,6 +369,11 @@ public final class FireworksLaunchDataNotifyOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Name: NLCCANLMPOI
+     * CmdId: 6038
+     * </pre>
+     *
      * Protobuf type {@code FireworksLaunchDataNotify}
      */
     public static final class Builder extends
@@ -687,7 +566,7 @@ public final class FireworksLaunchDataNotifyOuterClass {
 
       private int lastUseSchemeId_ ;
       /**
-       * <code>uint32 lastUseSchemeId = 6;</code>
+       * <code>uint32 last_use_scheme_id = 1;</code>
        * @return The lastUseSchemeId.
        */
       @java.lang.Override
@@ -695,7 +574,7 @@ public final class FireworksLaunchDataNotifyOuterClass {
         return lastUseSchemeId_;
       }
       /**
-       * <code>uint32 lastUseSchemeId = 6;</code>
+       * <code>uint32 last_use_scheme_id = 1;</code>
        * @param value The lastUseSchemeId to set.
        * @return This builder for chaining.
        */
@@ -706,7 +585,7 @@ public final class FireworksLaunchDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 lastUseSchemeId = 6;</code>
+       * <code>uint32 last_use_scheme_id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearLastUseSchemeId() {
@@ -729,7 +608,7 @@ public final class FireworksLaunchDataNotifyOuterClass {
           emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData, emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData.Builder, emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeDataOrBuilder> schemeDataListBuilder_;
 
       /**
-       * <code>repeated .FireworksLaunchSchemeData schemeDataList = 2;</code>
+       * <code>repeated .FireworksLaunchSchemeData scheme_data_list = 10;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData> getSchemeDataListList() {
         if (schemeDataListBuilder_ == null) {
@@ -739,7 +618,7 @@ public final class FireworksLaunchDataNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .FireworksLaunchSchemeData schemeDataList = 2;</code>
+       * <code>repeated .FireworksLaunchSchemeData scheme_data_list = 10;</code>
        */
       public int getSchemeDataListCount() {
         if (schemeDataListBuilder_ == null) {
@@ -749,7 +628,7 @@ public final class FireworksLaunchDataNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .FireworksLaunchSchemeData schemeDataList = 2;</code>
+       * <code>repeated .FireworksLaunchSchemeData scheme_data_list = 10;</code>
        */
       public emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData getSchemeDataList(int index) {
         if (schemeDataListBuilder_ == null) {
@@ -759,7 +638,7 @@ public final class FireworksLaunchDataNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .FireworksLaunchSchemeData schemeDataList = 2;</code>
+       * <code>repeated .FireworksLaunchSchemeData scheme_data_list = 10;</code>
        */
       public Builder setSchemeDataList(
           int index, emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData value) {
@@ -776,7 +655,7 @@ public final class FireworksLaunchDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .FireworksLaunchSchemeData schemeDataList = 2;</code>
+       * <code>repeated .FireworksLaunchSchemeData scheme_data_list = 10;</code>
        */
       public Builder setSchemeDataList(
           int index, emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData.Builder builderForValue) {
@@ -790,7 +669,7 @@ public final class FireworksLaunchDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .FireworksLaunchSchemeData schemeDataList = 2;</code>
+       * <code>repeated .FireworksLaunchSchemeData scheme_data_list = 10;</code>
        */
       public Builder addSchemeDataList(emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData value) {
         if (schemeDataListBuilder_ == null) {
@@ -806,7 +685,7 @@ public final class FireworksLaunchDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .FireworksLaunchSchemeData schemeDataList = 2;</code>
+       * <code>repeated .FireworksLaunchSchemeData scheme_data_list = 10;</code>
        */
       public Builder addSchemeDataList(
           int index, emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData value) {
@@ -823,7 +702,7 @@ public final class FireworksLaunchDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .FireworksLaunchSchemeData schemeDataList = 2;</code>
+       * <code>repeated .FireworksLaunchSchemeData scheme_data_list = 10;</code>
        */
       public Builder addSchemeDataList(
           emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData.Builder builderForValue) {
@@ -837,7 +716,7 @@ public final class FireworksLaunchDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .FireworksLaunchSchemeData schemeDataList = 2;</code>
+       * <code>repeated .FireworksLaunchSchemeData scheme_data_list = 10;</code>
        */
       public Builder addSchemeDataList(
           int index, emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData.Builder builderForValue) {
@@ -851,7 +730,7 @@ public final class FireworksLaunchDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .FireworksLaunchSchemeData schemeDataList = 2;</code>
+       * <code>repeated .FireworksLaunchSchemeData scheme_data_list = 10;</code>
        */
       public Builder addAllSchemeDataList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData> values) {
@@ -866,7 +745,7 @@ public final class FireworksLaunchDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .FireworksLaunchSchemeData schemeDataList = 2;</code>
+       * <code>repeated .FireworksLaunchSchemeData scheme_data_list = 10;</code>
        */
       public Builder clearSchemeDataList() {
         if (schemeDataListBuilder_ == null) {
@@ -879,7 +758,7 @@ public final class FireworksLaunchDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .FireworksLaunchSchemeData schemeDataList = 2;</code>
+       * <code>repeated .FireworksLaunchSchemeData scheme_data_list = 10;</code>
        */
       public Builder removeSchemeDataList(int index) {
         if (schemeDataListBuilder_ == null) {
@@ -892,14 +771,14 @@ public final class FireworksLaunchDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .FireworksLaunchSchemeData schemeDataList = 2;</code>
+       * <code>repeated .FireworksLaunchSchemeData scheme_data_list = 10;</code>
        */
       public emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData.Builder getSchemeDataListBuilder(
           int index) {
         return getSchemeDataListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .FireworksLaunchSchemeData schemeDataList = 2;</code>
+       * <code>repeated .FireworksLaunchSchemeData scheme_data_list = 10;</code>
        */
       public emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeDataOrBuilder getSchemeDataListOrBuilder(
           int index) {
@@ -909,7 +788,7 @@ public final class FireworksLaunchDataNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .FireworksLaunchSchemeData schemeDataList = 2;</code>
+       * <code>repeated .FireworksLaunchSchemeData scheme_data_list = 10;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeDataOrBuilder> 
            getSchemeDataListOrBuilderList() {
@@ -920,14 +799,14 @@ public final class FireworksLaunchDataNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .FireworksLaunchSchemeData schemeDataList = 2;</code>
+       * <code>repeated .FireworksLaunchSchemeData scheme_data_list = 10;</code>
        */
       public emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData.Builder addSchemeDataListBuilder() {
         return getSchemeDataListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData.getDefaultInstance());
       }
       /**
-       * <code>repeated .FireworksLaunchSchemeData schemeDataList = 2;</code>
+       * <code>repeated .FireworksLaunchSchemeData scheme_data_list = 10;</code>
        */
       public emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData.Builder addSchemeDataListBuilder(
           int index) {
@@ -935,7 +814,7 @@ public final class FireworksLaunchDataNotifyOuterClass {
             index, emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData.getDefaultInstance());
       }
       /**
-       * <code>repeated .FireworksLaunchSchemeData schemeDataList = 2;</code>
+       * <code>repeated .FireworksLaunchSchemeData scheme_data_list = 10;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData.Builder> 
            getSchemeDataListBuilderList() {
@@ -1023,13 +902,11 @@ public final class FireworksLaunchDataNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\037FireworksLaunchDataNotify.proto\032\037Firew" +
-      "orksLaunchSchemeData.proto\"\271\001\n\031Fireworks" +
-      "LaunchDataNotify\022\027\n\017lastUseSchemeId\030\006 \001(" +
-      "\r\0222\n\016schemeDataList\030\002 \003(\0132\032.FireworksLau" +
-      "nchSchemeData\"O\n\013LBBDGOELNDE\022\010\n\004NONE\020\000\022\020" +
-      "\n\013PEPPOHPHJOJ\020\333.\022\017\n\013DCDNILFDFLB\020\000\022\017\n\013NNB" +
-      "KOLMPOEA\020\001\032\002\020\001B\033\n\031emu.grasscutter.net.pr" +
-      "otob\006proto3"
+      "orksLaunchSchemeData.proto\"m\n\031FireworksL" +
+      "aunchDataNotify\022\032\n\022last_use_scheme_id\030\001 " +
+      "\001(\r\0224\n\020scheme_data_list\030\n \003(\0132\032.Firework" +
+      "sLaunchSchemeDataB\033\n\031emu.grasscutter.net" +
+      ".protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
